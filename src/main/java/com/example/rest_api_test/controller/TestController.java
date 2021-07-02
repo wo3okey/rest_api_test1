@@ -1,43 +1,40 @@
 package com.example.rest_api_test.controller;
 
 import com.example.rest_api_test.model.TestObject;
-import org.springframework.web.bind.annotation.*;
+import com.example.rest_api_test.service.TestApiService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 @RestController
+@Slf4j
 public class TestController {
+    private final TestApiService testApiService;
 
-    @GetMapping(value = "/api1")
+    @Autowired
+    public TestController(TestApiService testApiService) {
+        this.testApiService = testApiService;
+    }
+
+    @GetMapping(value = "/api1/{one}")
     @ResponseBody
-    public Map<String, Object> api1() {
-        Map<String, Object> apiData = new HashMap<>();
+    public Map<String, Object> api1(@PathVariable String one) {
+        log.info("one : {}", one);
 
-        // string
-        apiData.put("string", "stringData");
+        return testApiService.getApiData();
+    }
 
-        // list
-        List<Integer> list = Arrays.asList(1,2,3,4,5);
-        apiData.put("list", list);
+    @GetMapping(value = "/api2/{two}")
+    @ResponseBody
+    public TestObject api2(@PathVariable String two) {
+        log.info("two : {}", two);
 
-        // map
-        Map<String, Object> map = new HashMap<>();
-        map.put("key", "value");
-        map.put("listKey", list.stream().map(i -> String.valueOf(i)).collect(Collectors.toList()));
-        apiData.put("map", map);
-
-        // object
-        TestObject testObject = new TestObject(1492, "wookey", Arrays.asList("car", "tank"));
-        apiData.put("object", testObject);
-
-        // object list
-        List<TestObject> testObject2 = Arrays.asList(
-                 new TestObject(1492, "wookey", Arrays.asList("apple", "graph", "watermelon"))
-                ,new TestObject(3523, "yoan", Arrays.asList("apple2", "graph2", "watermelon2"))
-        );
-        apiData.put("objectList", testObject2);
-
-        return apiData;
+        Map<String, Object> data = testApiService.getApiData();
+        return (TestObject) data.get("object");
     }
 }
