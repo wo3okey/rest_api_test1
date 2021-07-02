@@ -4,10 +4,7 @@ import com.example.rest_api_test.model.TestObject;
 import com.example.rest_api_test.service.TestApiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -23,7 +20,7 @@ public class TestController {
 
     @GetMapping(value = "/api1/{one}")
     @ResponseBody
-    public Map<String, Object> api1(@PathVariable String one) {
+    public Map<String, Object> get1(@PathVariable String one) {
         log.info("one : {}", one);
 
         return testApiService.getApiData();
@@ -31,7 +28,7 @@ public class TestController {
 
     @GetMapping(value = "/api2/{two}")
     @ResponseBody
-    public TestObject api2(@PathVariable String two) {
+    public TestObject get2(@PathVariable String two) {
         log.info("two : {}", two);
 
         Map<String, Object> data = testApiService.getApiData();
