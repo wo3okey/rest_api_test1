@@ -31,7 +31,7 @@ public class TestApiService {
         TestObject testObject = TestObject.builder()
                 .id(1492)
                 .name("wookey")
-                .likeList(Arrays.asList("car", "tank"))
+                .likeList(Arrays.asList("car", "tank", "tank", "tank", "tank", "car", "airplain", "porkrain", "airplain", "car"))
                 .build();
 
         apiData.put("object", testObject);
@@ -39,7 +39,13 @@ public class TestApiService {
         // object list
         List<TestObject> testObject2 = Arrays.asList(
                 new TestObject(1492, "wookey", Arrays.asList("apple", "graph", "watermelon"))
-                , new TestObject(3523, "yoan", Arrays.asList("apple2", "graph2", "watermelon2"))
+                , new TestObject(1245, "sfd", Arrays.asList("dsgfdg", "tjgfhj", "sdgb"))
+                , new TestObject(352, "dsgs", Arrays.asList("fdgd", "gh", "gj"))
+                , new TestObject(3632, "fhfh", Arrays.asList("bnbvb", "ghjghj", "qr3"))
+                , new TestObject(3636, "yoan", Arrays.asList("cs", "gfs", "gffgj"))
+                , new TestObject(56856, "xcv", Arrays.asList("asfdg", "aawf", "vb"))
+                , new TestObject(21, "hkf", Arrays.asList("bn", "tjrtj", "gdjs"))
+                , new TestObject(742, "sdfk", Arrays.asList("egwe", "ytu", "sdga"))
         );
         apiData.put("objectList", testObject2);
 
