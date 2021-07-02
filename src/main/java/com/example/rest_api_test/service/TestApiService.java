@@ -38,14 +38,14 @@ public class TestApiService {
 
         // object list
         List<TestObject> testObject2 = Arrays.asList(
-                new TestObject(1492, "wookey", Arrays.asList("apple", "graph", "watermelon"))
-                , new TestObject(1245, "sfd", Arrays.asList("dsgfdg", "tjgfhj", "sdgb"))
-                , new TestObject(352, "dsgs", Arrays.asList("fdgd", "gh", "gj"))
-                , new TestObject(3632, "fhfh", Arrays.asList("bnbvb", "ghjghj", "qr3"))
-                , new TestObject(3636, "yoan", Arrays.asList("cs", "gfs", "gffgj"))
-                , new TestObject(56856, "xcv", Arrays.asList("asfdg", "aawf", "vb"))
-                , new TestObject(21, "hkf", Arrays.asList("bn", "tjrtj", "gdjs"))
-                , new TestObject(742, "sdfk", Arrays.asList("egwe", "ytu", "sdga"))
+                new TestObject(1492, "wookey", Arrays.asList("apple", "graph", "watermelon"), Arrays.asList(36,4,16,3151,2))
+                , new TestObject(1245, "sfd", Arrays.asList("dsgfdg", "tjgfhj", "sdgb"), Arrays.asList(1,15,15,1252))
+                , new TestObject(352, "dsgs", Arrays.asList("fdgd", "gh", "gj"), Arrays.asList(57,6,245,235,3125))
+                , new TestObject(3632, "fhfh", Arrays.asList("bnbvb", "ghjghj", "qr3"), Arrays.asList(24,14,124,214))
+                , new TestObject(3636, "yoan", Arrays.asList("cs", "gfs", "gffgj"), Arrays.asList(7,57,35,2331,3))
+                , new TestObject(56856, "xcv", Arrays.asList("asfdg", "aawf", "vb"), Arrays.asList(57,523,4,134,14))
+                , new TestObject(21, "hkf", Arrays.asList("bn", "tjrtj", "gdjs"), Arrays.asList(124,165,3216,35))
+                , new TestObject(742, "sdfk", Arrays.asList("egwe", "ytu", "sdga"), Arrays.asList(578,3465,314,2))
         );
         apiData.put("objectList", testObject2);
 

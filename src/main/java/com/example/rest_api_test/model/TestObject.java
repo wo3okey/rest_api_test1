@@ -15,4 +15,5 @@ public class TestObject {
     int id;
     String name;
     List<String> likeList;
+    List<Integer> numberList;
 }
